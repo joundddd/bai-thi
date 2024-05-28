@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+bài 1: <br>
+<p id="kq2"></p>
+<p id="kq3"></p>
+<div id="kq"></div>
+<script>
+    const a = [1, 2, 3, 4, 5, 6];
+    let dem = '';
+    let dem2 = '';
+    let tong = 0;
+    let tich = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (i % 2 === 0) {
+            tong += a[i];
+            dem += a[i] + ',';
+        } else {
+            tich += a[i];
+            dem2 += a[i] + ',';
+        }
+    }
+    const tong2 = tich - tong;
+    document.getElementById('kq2').innerHTML = 'các số lẻ là: '  + dem ;
+    document.getElementById('kq3').innerHTML = 'các số chắn là: ' + dem2;
+    document.getElementById('kq').innerHTML = (`Kết quả là: ${tong2}`);
+</script><br><hr>
+bai 2:<br>
+<p id="kq123"></p>
+<p id="kq1234"></p>
+<script>
+    function phanTich(chuoi) {
+        let so = 0;
+        for (let i = 0; i < chuoi.length; i++) {
+            let char = chuoi[i];
+            if (char >= 'A' && char <= 'Z') {
+                so++;
+            }
+        }
+
+        if (so > 0) {
+            return so;
+        } else {
+            return "The string does not contain any uppercase characters.";
+        }
+    }
+    document.getElementById('kq123').innerHTML = 'abcEF  ' + ': ' + (phanTich("abcdEF"));
+    document.getElementById('kq1234').innerHTML = 'accdef  ' + ': ' + (phanTich("accdef"));
+</script><br><hr>
+bai 3:<br>
+<p id="kq423"></p>
+<p id="kq567"></p>
+<script>
+    function isPrime(number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function findPrimesAndSort(arr) {
+        let primes = arr.filter(isPrime);
+        return primes.sort((a, b) => a - b);
+    }
+    let inputArray = [1, 5, 6, 23, 8, 47, 10, 3];
+    let resultArray = findPrimesAndSort(inputArray);
+    document.getElementById('kq423').innerHTML = ("số nguyên tăng dần là:  " + ',' + resultArray);
+    document.getElementById('kq567').innerHTML = 'các số nguyên là:  ' + '1,5,6,23,8,47,10,3'
+</script><br><hr>
+bai 4: <br>
+<p id="kq890"></p>
+<p id="kp1088"></p>
+<script>
+let ab = [
+    {
+        maso:1234,
+        ten:'iphone',
+        hang:'apple',
+        gia: 12000,
+
+    },
+    {
+        maso:5678,
+        ten:'androi',
+        hang:'sangsum',
+        gia:12000,
+    },
+];
+let dem5 = '';
+for (let i = 0; i < ab.length; i++) {
+   dem5 += '<br>' + '<hr>' + 'mã số: ' + ab[i].maso + '<br>' + 'tên nhà sản suất:' + ab[i].ten + '<br>' + 'tên sản phẩm' + ab[i].hang + '<br>' + 'giá sản phẩm' + ab[i].gia
+}
+document.getElementById('kq890').innerHTML = dem5;
+
+</script>
+</body>
+</html>
